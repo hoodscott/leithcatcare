@@ -72,6 +72,7 @@ h6 {
 html {
   font-size: 18px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
   background: var(--colour-background);
   color: var(--colour-text);
 }
@@ -127,9 +128,9 @@ body::-webkit-scrollbar-track,
 /* #endregion */
 
 body {
-  background-image: url("bg.png");
-  /* background-repeat: no-repeat; */
+  background-image: url("bg1600.webp");
   background-position: center center;
+  background-attachment: fixed;
   min-height: 100vh;
 }
 
@@ -166,12 +167,21 @@ header .header-container {
   justify-content: center;
 }
 
-header button {
+button {
+  display:inline-block;
+	cursor:pointer;
   background-color: var(--colour-tertiary);
   border-radius: 20px;
   border-width: 0;
   padding:0.5rem  1.5rem;
   font-weight: bolder;
+}
+button:hover {
+  background-color: var(--colour-tertiary-alt);
+}
+button:active {
+	position:relative;
+	top:1px;
 }
 
 main>div {
@@ -180,59 +190,29 @@ main>div {
 }
 
 main {
-  margin: 2rem 1rem;
+  margin: 0 1rem;
+  padding: 2rem 0;
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr;
   grid-auto-rows: minmax(100px, auto);
 }
 
-@media (min-width: 768px) {
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10vw;
-  }
-  main {
-    margin: 2rem auto;
-    max-width: 700px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas:
-      "pic about about"
-      "details prices contact";
-  }
-  .area-pic {
-    grid-area: pic;
-  }
-  .area-about {
-  grid-area: about;
-  }
-  .area-details {
-    grid-area: details;
-  }
-  .area-prices {
-    grid-area: prices;
-  }
-  .area-contact {
-    grid-area: contact;
-  }
-}
-@media (min-width: 992px) {
-  main {
-    max-width: 900px;
-  }
-}
-
 main>div {
   padding: 0.5rem 1rem;
   text-align: center;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
 }
 
 .area-pic {
   background-color: var(--colour-primary);
   border-radius: 2rem;
   min-height: 200px;
+}
+.area-pic img {
+  border-radius: 100%;
+  margin:auto;
 }
 .area-details {
   display: flex;
@@ -272,3 +252,75 @@ table {
   transform: rotate(45deg);
 }
 
+.testimonial-holder {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(100px, auto);
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+blockquote {
+  font-size: smaller;
+}
+blockquote::before {
+  content: "❝";
+}
+blockquote::after {
+  content: "❞";
+}
+
+
+@media (min-width: 768px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10vw;
+  }
+  main {
+    margin: 0 auto;
+    max-width: 700px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "pic about about"
+      "details prices contact"
+      "test test test";
+  }
+  .area-pic {
+    grid-area: pic;
+  }
+  .area-about {
+  grid-area: about;
+  }
+  .area-details {
+    grid-area: details;
+  }
+  .area-prices {
+    grid-area: prices;
+  }
+  .area-contact {
+    grid-area: contact;
+  }
+  .area-testimonial {
+    grid-area: test;
+  }
+  .testimonial-holder {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 992px) {
+  main {
+    max-width: 900px;
+  }
+}
+@media (min-width: 1600px) {
+  body {
+    background-size: 100% 100%;
+  }
+}
+@media (min-width: 1920px) {
+  .testimonial-holder {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
