@@ -56,8 +56,8 @@ h6 {
 
 /* #region General */
 :root {
-  --colour-primary: hsl(155, 30%, 55%);
-  --colour-secondary: hsl(153, 38%, 90%);
+  --colour-primary: hsl(155, 30%, 55%, 0.9);
+  --colour-secondary: hsl(153, 38%, 90%, 0.75);
   --colour-tertiary: hsl(147, 33%, 36%);
   --colour-tertiary-alt: hsl(147, 33%, 72%);
   --colour-background: hsl(154, 39%, 95%);
@@ -103,8 +103,7 @@ p {
 /* #endregion */
 
 /* #region Permanent Scrollbar */
-
-/* body,
+body,
 #controls {
   overflow-y: scroll;
   scrollbar-color: var(--colour-secondary) var(--colour-primary);
@@ -123,15 +122,17 @@ body::-webkit-scrollbar-thumb,
 body::-webkit-scrollbar-track,
 #controls::-webkit-scrollbar-track {
   background: var(--colour-primary);
-} */
-
+}
 /* #endregion */
 
+/* #region leithcat */
 body {
   background-image: url("bg1600.webp");
   background-position: center center;
   background-attachment: fixed;
   min-height: 100vh;
+  min-height: 100lvh;
+  border-bottom: 0.5rem solid var(--colour-primary);
 }
 
 h2 {
@@ -149,7 +150,6 @@ a:visited {
 
 header {
   background-color: var(--colour-primary);
-  opacity: 0.9;
 }
 
 header img {
@@ -171,7 +171,7 @@ button {
   display:inline-block;
 	cursor:pointer;
   background-color: var(--colour-tertiary);
-  border-radius: 20px;
+  border-radius: 1rem;
   border-width: 0;
   padding:0.5rem  1.5rem;
   font-weight: bolder;
@@ -186,7 +186,6 @@ button:active {
 
 main>div {
   background-color: var(--colour-secondary);
-  opacity: 0.75;
 }
 
 main {
@@ -259,6 +258,20 @@ table {
   gap: 1rem;
   padding: 1rem 0;
 }
+.testimonial-selector {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+}
+.testimonial-selector>div {
+  display: flex;
+  gap: 0.25rem;
+}
+.testimonial-indicator {
+  font-weight: bold;
+  color: var(--colour-primary);
+}
 
 blockquote {
   font-size: smaller;
@@ -324,3 +337,35 @@ blockquote::after {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .area-about, .area-details, .area-prices, .area-contact, .area-testimonial {
+    animation: fade-in 0.25s ease-in forwards;
+    opacity: 0;
+  }
+  .area-details {
+    animation-delay: 0.05s;
+  }
+  .area-prices {
+    animation-delay: 0.1s;
+  }
+  .area-contact {
+    animation-delay: 0.15s;
+  }
+  .area-testimonial {
+    animation-delay: 0.2s;
+  }
+}
+/* #endregion */

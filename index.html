@@ -6,14 +6,14 @@
   <title>Leith Cat Care</title>
   <meta name="description" content="Friendly, reliable catsitting in Leith">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css?v=0.2">
+  <link rel="stylesheet" href="style.css?v=0.3">
 
 </head>
 
 <body>
   <header>
     <div class="header-container">
-      <img alt="Logo" src="logo.webp"/>
+      <img alt="Logo" src="logo.webp" rel="preload" fetchpriority="high"/>
     </div>
     <div>
       <h1>Leith Cat Care</h1>
@@ -63,7 +63,7 @@
 
     <div class="area-testimonial">
       <div class="ears"><div class="left-ear"></div><div class="right-ear"></div></div>
-      <div class="testimonial-holder">
+      <div class="testimonial-holder visually-hidden">
         <div>
           <blockquote>Amy was fantastic - super professional, reliable, and great at keeping me updated with really thorough and thoughtful updates while I was away. Roman was very relaxed and happy when I returned. Thank you so much!</blockquote>
           Claire
@@ -80,14 +80,18 @@
           <blockquote>Amy is a great sitter! She shared lots of photos of my cat and made me feel relaxed while I was away. And my cat had a great time hanging out with her!</blockquote>
           Hannah
         </div>
-        <div>
+        <!-- <div>
           <blockquote>Great as always!</blockquote>
           Robbie
-        </div>
+        </div> -->
         <div>
           <blockquote>Thanks again to Amy I came home to a very content cat :) ^_^</blockquote>
           Victoria
         </div>
+        <!-- <div>
+          <blockquote>Amy was great as always! :)</blockquote>
+          Robbie
+        </div> -->
         <div>
           <blockquote>Amy was a fantastic cat sitter for my fluffy pair, professional and well versed in all the cat related queries /questions ahead of the sitting. Great communication throughout too, I came home to two very chilled and fluffy cats. Thank you 🙏🏻</blockquote>
           Zara
@@ -101,9 +105,13 @@
           Hannah
         </div>
         <!-- <div>
-          <blockquote>Amy did an excellent job of looking after our wee Britney. She provided great communication for updates and we came home to a happy cat. We've already booked Amy for our next trip away, can't recommend enough :)</blockquote>
+          <blockquote>This is the second time Amy has looked after Britney, excellent service again, can't recommend enough :).</blockquote>
           Robbie
         </div> -->
+        <div>
+          <blockquote>Amy did an excellent job of looking after our wee Britney. She provided great communication for updates and we came home to a happy cat. We've already booked Amy for our next trip away, can't recommend enough :)</blockquote>
+          Robbie
+        </div>
         <div>
           <blockquote>Amy is really friendly, communicative and adaptable. We will definitely be asking her back again and would highly recommend her. Thanks Amy!</blockquote>
           Daisy
@@ -134,15 +142,15 @@
         </div>
         <div>
           <blockquote>As always, Amy was great - I know Jemima is happy in her capable hands</blockquote>
-          Katherine
+          Kathy
         </div>
         <div>
           <blockquote>The cats are always well kept and happy when I return home :) Amy also keeps me up to date with messages and photos, so I don’t worry whilst I’m away.</blockquote>
           Victoria
         </div>
         <div>
-          <blockquote>Amy is super friendly, caring and a natural cat person ^_^ . Bran and Arthur are always content when I come home. The cats are also pleased to see her when Amy returns the keys, they get up from sleeping to see her :) A lovely and interesting person for humans to talk to as well ;)</blockquote>
-          Victoria
+          <blockquote>Amy is always great, reliable and my cat loves her ☺️</blockquote>
+          Charlotte
         </div>
         <div>
           <blockquote>Thanks so much Amy for being a wonderful sitter. Amy was an excellent sitter, with great communication and a clear love for cats. Our cats took to her instantly and were happy to see her for each visit. Thanks so very much Amy!!</blockquote>
@@ -150,11 +158,15 @@
         </div>
         <div>
           <blockquote>Amy was wonderful as usual and Jemima is very happy and comfortable around her</blockquote>
-          Katherine
+          Kathy
         </div>
         <div>
           <blockquote>Amy did a fantastic job looking after my two cats. She made sure that one of them had her daily medicine and much needed snuggles. She also sent daily updates and photos which were much appreciated. Highly recommend Amy as a cat sitter!</blockquote>
           Alex
+        </div>
+        <div>
+          <blockquote>Amy is super friendly, caring and a natural cat person ^_^ . Bran and Arthur are always content when I come home. The cats are also pleased to see her when Amy returns the keys, they get up from sleeping to see her :) A lovely and interesting person for humans to talk to as well ;)</blockquote>
+          Victoria
         </div>
         <div>
           <blockquote>Amy was brilliant with Sima, sharing regular updates to put my mind at ease and I came home to a really happy cat - would absolutely recommend 😊</blockquote>
@@ -162,11 +174,7 @@
         </div>
         <div>
           <blockquote>Amy is wonderful. Second time looking after my cat. Lots of photos, great communication and a very happy 😺</blockquote>
-          Katherine
-        </div>
-        <div>
-          <blockquote>Amy is always great, reliable and my cat loves her ☺️</blockquote>
-          Charlotte
+          Kathy
         </div>
         <div>
           <blockquote>Amy is Amy-azing! At the last minute before our trip our cat needed a course of antibiotics, Amy took this in her stride. She keeps us well informed with pictures and updates, reassured me, and generally made me feel like I had nothing to worry about. She’s also clearly a cat whisperer as I think my cat loves her more than me now!!!</blockquote>
@@ -190,18 +198,20 @@
         </div>
         <div>
           <blockquote>Amy was fantastic! She came to see me beforehand and we talked through everything. When I was away I was completely reassured by her messages and photo, and came home to a very happy cat! I'd recommend Amy to anyone. So would my cat Jemima 😸</blockquote>
-          Katherine
+          Kathy
         </div>
         <div>
           <blockquote>It was so lovely to have Amy help out with the cats, we felt really reassured and they were well looked after!</blockquote>
           Keira
         </div>
       </div>
-      <button id="show-testimonial">Show More</button>
+      <div class="testimonial-selector">
+        <button id="show-testimonial">Show More</button>
+      </div>
     </div>
 
     <div class="area-pic">
-      <img alt="pic of me and cats" src="cats.webp"/>
+      <img alt="pic of me and cats" src="cats.webp" rel="preload" fetchpriority="high"/>
     </div>
       
   </main>
