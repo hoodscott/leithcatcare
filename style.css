@@ -127,7 +127,7 @@ body::-webkit-scrollbar-track,
 
 /* #region leithcat */
 body {
-  background-image: url("bg1600.webp");
+  background-image: url("img/bg1600.webp");
   background-position: center center;
   background-attachment: fixed;
   min-height: 100vh;
